@@ -1,0 +1,52 @@
+{
+  "name": "ohstem-ai",
+  "private": true,
+  "version": "1.0.0",
+  "description": "OhStem AI",
+  "repository": "",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "cross-env NODE_ENV=development vite",
+    "build": "cross-env NODE_ENV=production vite build && npx workbox generateSW workbox-config.js",
+    "build-cordova": "cross-env TARGET=cordova cross-env NODE_ENV=production vite build && node ./build/build-cordova.js && cd cordova && cordova build",
+    "build-cordova-ios": "cross-env TARGET=cordova cross-env NODE_ENV=production vite build && node ./build/build-cordova.js && cd cordova && cordova build ios",
+    "cordova-ios": "cross-env TARGET=cordova cross-env NODE_ENV=production vite build && node ./build/build-cordova.js && cd cordova && cordova run ios",
+    "build-cordova-android": "cross-env TARGET=cordova cross-env NODE_ENV=production vite build && node ./build/build-cordova.js && cd cordova && cordova build android",
+    "cordova-android": "cross-env TARGET=cordova cross-env NODE_ENV=production vite build && node ./build/build-cordova.js && cd cordova && cordova run android",
+    "postinstall": "cpy ./node_modules/framework7-icons/fonts/*.* ./src/fonts/ && cpy ./node_modules/material-icons/iconfont/*.* ./src/fonts/"
+  },
+  "browserslist": [
+    "Android >= 7",
+    "IOS >= 11",
+    "Safari >= 11",
+    "Chrome >= 49",
+    "Firefox >= 31",
+    "Samsung >= 5"
+  ],
+  "dependencies": {
+    "@teachablemachine/image": "^0.8.5",
+    "@tensorflow/tfjs": "^3.12.0",
+    "dom7": "^3.0.0",
+    "framework7": "^6.3.14",
+    "framework7-icons": "^5.0.5",
+    "framework7-react": "^6.3.14",
+    "material-icons": "^1.10.5",
+    "prop-types": "^15.8.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "skeleton-elements": "^3.5.0",
+    "swiper": "^6.8.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react-refresh": "^1.3.6",
+    "cpy-cli": "^3.1.1",
+    "cross-env": "^7.0.3",
+    "postcss-preset-env": "^6.7.0",
+    "rollup": "^2.63.0",
+    "sass": "^1.47.0",
+    "vite": "^2.7.10",
+    "vite-plugin-html": "^2.1.2",
+    "workbox-cli": "^6.4.2"
+  }
+}
