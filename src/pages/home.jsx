@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import { Page, Navbar, NavTitle, NavTitleLarge, Link, Toolbar, Block } from "framework7-react";
+import { Page, Navbar, Button, Block, Card, List, ListInput, Icon, Row, Col } from "framework7-react";
 import * as tf from "@tensorflow/tfjs";
 import * as tmImage from "@teachablemachine/image";
+
+import ImageClass from "../components/ImageClass";
 
 const URL = "https://teachablemachine.withgoogle.com/models/yYDzXuF7w/";
 
@@ -14,7 +16,7 @@ export default class extends Component {
   }
 
   componentDidMount() {
-    this.init();
+    //this.init();
   }
 
   init = async () => {
@@ -66,10 +68,12 @@ export default class extends Component {
   render() {
     return (
       <Page name="home">
+        <Navbar title="Teachable Machine Image Model"></Navbar>
         <Block>
-          <div>Teachable Machine Image Model</div>
+          <ImageClass />
+          {/* <div>Teachable Machine Image Model</div>
           <div id="webcam-container"></div>
-          <div id="label-container"></div>
+          <div id="label-container"></div> */}
         </Block>
       </Page>
     );
