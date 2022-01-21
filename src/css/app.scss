@@ -5,8 +5,17 @@
 
 /* Your app custom styles here */
 
-#capture-container canvas {
+#capture-container {
+  overflow-x: auto;
+  white-space: nowrap;
+
+  canvas {
+    width: 100px;
+    height: 100px;
+    margin: 2px 5px;
+  }
+}
+
+.button {
   width: 100px;
-  height: 100px;
-  margin: 2px 5px;
 }
