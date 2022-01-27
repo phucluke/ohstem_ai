@@ -7,8 +7,6 @@ import $ from "jquery";
 import ImageClass from "../components/ImageClass";
 import * as utils from "../js/utils";
 
-const URL = "https://teachablemachine.withgoogle.com/models/yYDzXuF7w/";
-
 let model, webcam, labelContainer, maxPredictions;
 
 export default class extends Component {
